@@ -8,15 +8,13 @@
 import UIKit
 
 class StartViewController: UIViewController {
-    var game = Game()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func toPlay(_ sender: UIButton) {
-        game.play()
+        
     }
     
 }

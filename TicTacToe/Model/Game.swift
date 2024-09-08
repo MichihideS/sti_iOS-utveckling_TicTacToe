@@ -8,9 +8,13 @@
 import Foundation
 
 class Game {
-    let boardArray: Array<Int> = [0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
+    var boardArray: Array<Int> = [0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
     
-    func play() {
-        print(boardArray)
+    func play(square: Int) {
+        if boardArray[square] == 0 {
+            boardArray[square] = 1
+        } else {
+            print("already used")
+        }
     }
 }
