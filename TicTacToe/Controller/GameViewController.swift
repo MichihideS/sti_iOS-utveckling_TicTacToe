@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
 
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
-            game.play(square: pressed.tag)
+            game.checkOption(square: pressed.tag)
         }
     }
 }
