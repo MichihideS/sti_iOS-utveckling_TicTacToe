@@ -18,15 +18,52 @@ class Game {
             print(boardArray)
         }
         
-        checkWinner()
+        checkWinnerPlayerOne()
     }
     
-    func checkWinner() {
+    func checkWinnerPlayerOne() {
         switch boardArray {
             case [1, 1, 1, 0, 0, 0, 0, 0, 0]:
-            print("you won")
-        default:
-            return
+                print("you won")
+            case [0, 0, 0, 1, 1, 1, 0, 0, 0]:
+                print("you won")
+            case [0, 0, 0, 0, 0, 0, 1, 1, 1]:
+                print("won")
+            case [1, 0, 0, 1, 0, 0, 1, 0, 0]:
+                print("won")
+            case [0, 1, 0, 0, 1, 0, 0, 1, 0]:
+                print("won")
+            case [0, 0, 1, 0, 0, 1, 0, 0, 1]:
+                print("won")
+            case [1, 0, 0, 0, 1, 0, 0, 0, 1]:
+                print("won")
+            case [0, 0, 1, 0, 1, 0, 1, 0, 0]:
+                print("won")
+            default:
+                return
+        }
+    }
+    
+    func checkWinnerPlayerTwo() {
+        switch boardArray {
+            case [2, 2, 2, 0, 0, 0, 0, 0, 0]:
+                print("lose")
+            case [0, 0, 0, 2, 2, 2, 0, 0, 0]:
+                print("lose")
+            case [0, 0, 0, 0, 0, 0, 2, 2, 2]:
+                print("lose")
+            case [2, 0, 0, 2, 0, 0, 2, 0, 0]:
+                print("lose")
+            case [0, 2, 0, 0, 2, 0, 0, 2, 0]:
+                print("lose")
+            case [0, 0, 2, 0, 0, 2, 0, 0, 2]:
+                print("lose")
+            case [2, 0, 0, 0, 2, 0, 0, 0, 2]:
+                print("lose")
+            case [0, 0, 2, 0, 2, 0, 2, 0, 0]:
+                print("lose")
+            default:
+                return
         }
     }
 }
