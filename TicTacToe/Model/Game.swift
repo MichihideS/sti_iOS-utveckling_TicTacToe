@@ -18,52 +18,32 @@ class Game {
             print(boardArray)
         }
         
-        checkWinnerPlayerOne()
+        checkWinner()
     }
     
-    func checkWinnerPlayerOne() {
-        switch boardArray {
-            case [1, 1, 1, 0, 0, 0, 0, 0, 0]:
+    /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
+    ** have reached any of the combinations to win */
+    func checkWinner() {
+        let winningCondition: Array<Array> = [
+            [boardArray[0], boardArray[1], boardArray[2]],
+            [boardArray[3], boardArray[4], boardArray[5]],
+            [boardArray[6], boardArray[7], boardArray[8]],
+            [boardArray[0], boardArray[3], boardArray[6]],
+            [boardArray[1], boardArray[4], boardArray[7]],
+            [boardArray[2], boardArray[5], boardArray[8]],
+            [boardArray[0], boardArray[4], boardArray[8]],
+            [boardArray[2], boardArray[4], boardArray[6]]
+        ]
+        
+        for condition in winningCondition {
+            switch condition {
+            case [1, 1, 1]:
                 print("you won")
-            case [0, 0, 0, 1, 1, 1, 0, 0, 0]:
-                print("you won")
-            case [0, 0, 0, 0, 0, 0, 1, 1, 1]:
-                print("won")
-            case [1, 0, 0, 1, 0, 0, 1, 0, 0]:
-                print("won")
-            case [0, 1, 0, 0, 1, 0, 0, 1, 0]:
-                print("won")
-            case [0, 0, 1, 0, 0, 1, 0, 0, 1]:
-                print("won")
-            case [1, 0, 0, 0, 1, 0, 0, 0, 1]:
-                print("won")
-            case [0, 0, 1, 0, 1, 0, 1, 0, 0]:
-                print("won")
+            case [2, 2, 2]:
+                print("you lose")
             default:
                 return
-        }
-    }
-    
-    func checkWinnerPlayerTwo() {
-        switch boardArray {
-            case [2, 2, 2, 0, 0, 0, 0, 0, 0]:
-                print("lose")
-            case [0, 0, 0, 2, 2, 2, 0, 0, 0]:
-                print("lose")
-            case [0, 0, 0, 0, 0, 0, 2, 2, 2]:
-                print("lose")
-            case [2, 0, 0, 2, 0, 0, 2, 0, 0]:
-                print("lose")
-            case [0, 2, 0, 0, 2, 0, 0, 2, 0]:
-                print("lose")
-            case [0, 0, 2, 0, 0, 2, 0, 0, 2]:
-                print("lose")
-            case [2, 0, 0, 0, 2, 0, 0, 0, 2]:
-                print("lose")
-            case [0, 0, 2, 0, 2, 0, 2, 0, 0]:
-                print("lose")
-            default:
-                return
+            }
         }
     }
 }
