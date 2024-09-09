@@ -24,9 +24,9 @@ class Game {
     /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
     ** have reached any of the combinations to win */
     func checkWinner() {
-        let winningCondition: Array<Array> = [
-            [boardArray[0], boardArray[1], boardArray[2]],
+        let winningCondition: Array<[Int]> = [
             [boardArray[3], boardArray[4], boardArray[5]],
+            [boardArray[0], boardArray[1], boardArray[2]],
             [boardArray[6], boardArray[7], boardArray[8]],
             [boardArray[0], boardArray[3], boardArray[6]],
             [boardArray[1], boardArray[4], boardArray[7]],
@@ -39,11 +39,19 @@ class Game {
             switch condition {
             case [1, 1, 1]:
                 print("you won")
+                reset()
             case [2, 2, 2]:
                 print("you lose")
+                reset()
             default:
-                return
+                print("test loop")
+                continue
             }
         }
+    }
+    
+    func reset() {
+        boardArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        print("resetted")
     }
 }
