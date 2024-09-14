@@ -71,8 +71,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E3g-mL-XSO">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tpj-VG-EjP">
-                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="tpj-VG-EjP">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="ThK-Ja-wib"/>
@@ -82,8 +82,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="HLd-cz-LnK" appends="YES" id="ahl-24-WdH"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N5N-gb-uH1">
-                                                <rect key="frame" x="110" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="N5N-gb-uH1">
+                                                <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="OFX-2B-GA3"/>
@@ -93,8 +93,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="QHJ-Fg-2va" appends="YES" id="DWy-zb-9xo"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PLp-94-Wf9">
-                                                <rect key="frame" x="220" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="PLp-94-Wf9">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="KrI-7Q-eeE"/>
@@ -108,8 +108,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OIr-9M-K89">
                                         <rect key="frame" x="0.0" y="110" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-ok-O6B">
-                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-ok-O6B">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="iCy-fa-cJ5"/>
@@ -119,8 +119,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="lTy-nt-DjQ" appends="YES" id="hFp-1U-97V"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Q8-Fy-ZxP">
-                                                <rect key="frame" x="110" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="4Q8-Fy-ZxP">
+                                                <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="L84-Ib-CW2"/>
@@ -129,8 +129,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="Z4I-Lx-P3h" appends="YES" id="eaS-4A-Tun"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-3e-EBr">
-                                                <rect key="frame" x="220" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-3e-EBr">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="wR9-6S-j2D"/>
@@ -144,8 +144,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vdf-Hg-Wux">
                                         <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LLy-Mz-tT5">
-                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="LLy-Mz-tT5">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="VWX-i4-VBY"/>
@@ -155,8 +155,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="eRf-bg-lYI" appends="YES" id="YAn-Ss-3H9"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="svC-Hq-Yqf">
-                                                <rect key="frame" x="110" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="svC-Hq-Yqf">
+                                                <rect key="frame" x="110" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="fH8-nK-Zti"/>
@@ -166,8 +166,8 @@
                                                     <outletCollection property="gestureRecognizers" destination="pex-Lp-vde" appends="YES" id="lfP-PR-BZo"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xTw-yY-Gbp">
-                                                <rect key="frame" x="220" y="1.6666666666666643" width="100" height="97"/>
+                                            <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="xTw-yY-Gbp">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="Omf-Te-0p5"/>
@@ -271,7 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,7 +11,6 @@ class GameViewController: UIViewController {
     @IBOutlet var playBoard: [UIImageView]!
     
     var game = Game()
-    var whosTurn: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +26,20 @@ class GameViewController: UIViewController {
             
             switch value {
             case 1:
-                pressed.image = UIImage(named: "ellipse")
+                pressed.image = UIImage(named: "player_one")
             case 2:
-                pressed.image = UIImage(named: "cancel")
+                pressed.image = UIImage(named: "player_two")
             default:
                 break
             }
             
+            let winner = game.checkWinner()
             
+            if winner == true {
+                for board in playBoard {
+                    board.image = UIImage(named: "square")
+                }
+            }
         }
     }
 }
