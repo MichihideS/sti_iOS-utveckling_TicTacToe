@@ -9,32 +9,62 @@ import Foundation
 
 class Game {
     var boardArray: Array<Int> = [0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
-    var whosTurn: Int?
+    var whosPlaying: Int?
+    var isComputer = false
+    var computerSquare = 0
+    var isPlayerDone = false
     
-    // Randomizes which player will start the in the TicTacToe
+    // Enables computer mode.
+    func enableComputer(computerPlays: Bool) {
+        isComputer = computerPlays
+    }
+    // Randomizes which player will start the in the TicTacToe.
     func whoStarts() {
         let randomNumber = Int.random(in: 1...2)
-        whosTurn = randomNumber
+        whosPlaying = randomNumber
+    }
+    
+    /* Checks Boolean if player actually made a valid choice and if player did computer will randomize a number and
+    ** check the array if the number is valid aswell.
+     */
+    func computerChoice() -> Int {
+        if isPlayerDone {
+            repeat {
+                let randomNumber = Int.random(in: 0...8)
+                computerSquare = randomNumber
+            } while boardArray[computerSquare] != 0
+            
+            boardArray[computerSquare] = 2
+            isPlayerDone = false
+        }
+        
+        return computerSquare
     }
     
     /* Checks if the square is taken by checking the tag and the value of the square, if the value is 0 the new value becomes the
     ** value of the player and its the next players turn.
      */
     func checkOption(square: Int) -> Int {
-        if whosTurn == nil {
+        if whosPlaying == nil && !isComputer {
             whoStarts()
+        } else {
+            whosPlaying = 1
         }
         var imageValue = 0
         
         switch boardArray[square] {
         case 0:
-            if whosTurn == 1 {
+            if whosPlaying == 1 {
                 boardArray[square] = 1
-                whosTurn = 2
+                if !isComputer {
+                    whosPlaying = 2
+                } else {
+                    isPlayerDone = true
+                }
                 imageValue = 1
-            } else if whosTurn == 2 {
+            } else if whosPlaying == 2 {
                 boardArray[square] = 2
-                whosTurn = 1
+                whosPlaying = 1
                 imageValue = 2
             }
         default:
@@ -65,18 +95,20 @@ class Game {
         for condition in winningCondition {
             if condition == [1, 1, 1] {
                 isWinnerYet = true
-                print("you won")
+                print("Player One Won")
                 reset()
                 break
-            }
-            
-            if condition == [2, 2, 2] {
+            } else if condition == [2, 2, 2] {
                 isWinnerYet = true
-                print("you lose")
+                print("Player Two Won")
                 reset()
                 break
+            } else if !boardArray.contains(0) {
+                isWinnerYet = true
+                print("DRAW")
+                reset()
+                
             }
-           // print("test loop")
         }
         
         return isWinnerYet
@@ -85,7 +117,7 @@ class Game {
     // Resets the TicTacToe board to a value of 0s.
     func reset() {
         boardArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        whosTurn = nil
+        whosPlaying = nil
         print("resetted")
         
     }

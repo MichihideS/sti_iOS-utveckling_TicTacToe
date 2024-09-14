@@ -11,7 +11,8 @@ class GameViewController: UIViewController {
     @IBOutlet var playBoard: [UIImageView]!
     
     var game = Game()
-
+    var computerPlays = true // Computer test
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +21,9 @@ class GameViewController: UIViewController {
 
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
+            game.enableComputer(computerPlays: computerPlays)
             
             let value = game.checkOption(square: pressed.tag)
-            print(value)
             
             switch value {
             case 1:
@@ -35,6 +36,13 @@ class GameViewController: UIViewController {
             
             let winner = game.checkWinner()
             
+            if computerPlays && !winner {
+                let computerValue = game.computerChoice()
+                
+                playBoard[computerValue].image = UIImage(named: "player_two")
+            }
+            print(value)
+       
             if winner == true {
                 for board in playBoard {
                     board.image = UIImage(named: "square")
