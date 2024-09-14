@@ -13,12 +13,11 @@ class Game {
     func checkOption(square: Int) {
         if boardArray[square] == 0 {
             boardArray[square] = 1
+            checkWinner()
         } else {
             print("already used")
             print(boardArray)
         }
-        
-        checkWinner()
     }
     
     /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
@@ -36,22 +35,24 @@ class Game {
         ]
         
         for condition in winningCondition {
-            switch condition {
-            case [1, 1, 1]:
+            if condition == [1, 1, 1] {
                 print("you won")
                 reset()
-            case [2, 2, 2]:
+                break
+            }
+            
+            if condition == [2, 2, 2] {
                 print("you lose")
                 reset()
-            default:
-                print("test loop")
-                continue
+                break
             }
+            print("test loop")
         }
     }
     
     func reset() {
         boardArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         print("resetted")
+        
     }
 }
