@@ -15,6 +15,9 @@
 		9C1E0E9F2C8839A300FB2F42 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9C1E0E9E2C8839A300FB2F42 /* Base */; };
 		9C1E0EAA2C88693A00FB2F42 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E0EA92C88693A00FB2F42 /* GameViewController.swift */; };
 		9C1E0ECE2C8DE3D800FB2F42 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E0ECD2C8DE3D800FB2F42 /* Game.swift */; };
+		9C1E0EF02C95FDB400FB2F42 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E0EEF2C95FDB400FB2F42 /* ModeViewController.swift */; };
+		9C1E0EF22C95FEC700FB2F42 /* SettingsPVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E0EF12C95FEC700FB2F42 /* SettingsPVPViewController.swift */; };
+		9C1E0EF42C95FF1100FB2F42 /* SettingsPVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E0EF32C95FF1100FB2F42 /* SettingsPVCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		9C1E0EA02C8839A300FB2F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1E0EA92C88693A00FB2F42 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9C1E0ECD2C8DE3D800FB2F42 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9C1E0EEF2C95FDB400FB2F42 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
+		9C1E0EF12C95FEC700FB2F42 /* SettingsPVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPVPViewController.swift; sourceTree = "<group>"; };
+		9C1E0EF32C95FF1100FB2F42 /* SettingsPVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPVCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,9 @@
 			children = (
 				9C1E0E962C8839A200FB2F42 /* StartViewController.swift */,
 				9C1E0EA92C88693A00FB2F42 /* GameViewController.swift */,
+				9C1E0EEF2C95FDB400FB2F42 /* ModeViewController.swift */,
+				9C1E0EF12C95FEC700FB2F42 /* SettingsPVPViewController.swift */,
+				9C1E0EF32C95FF1100FB2F42 /* SettingsPVCViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,7 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1E0EF22C95FEC700FB2F42 /* SettingsPVPViewController.swift in Sources */,
 				9C1E0EAA2C88693A00FB2F42 /* GameViewController.swift in Sources */,
+				9C1E0EF02C95FDB400FB2F42 /* ModeViewController.swift in Sources */,
+				9C1E0EF42C95FF1100FB2F42 /* SettingsPVCViewController.swift in Sources */,
 				9C1E0ECE2C8DE3D800FB2F42 /* Game.swift in Sources */,
 				9C1E0E972C8839A200FB2F42 /* StartViewController.swift in Sources */,
 				9C1E0E932C8839A200FB2F42 /* AppDelegate.swift in Sources */,

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-lt-cyw">
-                                <rect key="frame" x="80" y="594" width="233" height="124"/>
+                                <rect key="frame" x="80" y="668" width="233" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ig-ja-W94">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="50"/>
@@ -28,16 +28,8 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Play"/>
                                         <connections>
                                             <action selector="toPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIO-gt-9cr"/>
-                                            <segue destination="PMa-QF-NLj" kind="show" identifier="segueToPlay" id="msd-7t-BBB"/>
+                                            <segue destination="zky-Kw-LA7" kind="show" identifier="segueToChooseMode" id="RCj-wb-JM7"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqS-d3-Jhb">
-                                        <rect key="frame" x="0.0" y="74" width="233" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="4WP-cg-88w"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -55,7 +47,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038.9312977099237" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="879" y="-2"/>
+        </scene>
+        <!--Mode View Controller-->
+        <scene sceneID="4qO-mW-avt">
+            <objects>
+                <viewController id="zky-Kw-LA7" customClass="ModeViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ckM-Ug-yzu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkK-Qj-8Uj">
+                                <rect key="frame" x="125" y="408.66666666666669" width="143" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Player vs Player"/>
+                                <connections>
+                                    <segue destination="4Z6-YZ-cib" kind="show" identifier="segueToPvp" id="ifv-8M-SQS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbK-JK-C9N">
+                                <rect key="frame" x="110.33333333333333" y="493.66666666666669" width="172.66666666666669" height="35.000000000000057"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Player vs Computer"/>
+                                <connections>
+                                    <segue destination="7Bo-1L-ojt" kind="show" identifier="segueToPvc" id="sAM-2i-c3b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RzK-sO-S69"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DkK-Qj-8Uj" firstAttribute="centerX" secondItem="ckM-Ug-yzu" secondAttribute="centerX" id="VdM-vs-nta"/>
+                            <constraint firstItem="DkK-Qj-8Uj" firstAttribute="centerY" secondItem="ckM-Ug-yzu" secondAttribute="centerY" id="Y8h-G8-taS"/>
+                            <constraint firstItem="JbK-JK-C9N" firstAttribute="top" secondItem="DkK-Qj-8Uj" secondAttribute="bottom" constant="50" id="npF-cZ-voy"/>
+                            <constraint firstItem="JbK-JK-C9N" firstAttribute="centerX" secondItem="ckM-Ug-yzu" secondAttribute="centerX" id="nt0-yx-hru"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5XE-4k-dEG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIv-kx-lvw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="-2"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="C1G-Qo-cG9">
@@ -249,7 +281,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1950.3816793893129" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="3280" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AzR-TH-aAl">
@@ -269,7 +301,70 @@
             </objects>
             <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
         </scene>
+        <!--SettingsPVP View Controller-->
+        <scene sceneID="XlE-8N-glI">
+            <objects>
+                <viewController id="4Z6-YZ-cib" customClass="SettingsPVPViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NOd-oh-yDj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYD-7F-7G4">
+                                <rect key="frame" x="168.66666666666666" y="683" width="55.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                <connections>
+                                    <segue destination="PMa-QF-NLj" kind="show" identifier="segueToPlay" id="sKs-3F-Fr0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Etl-hV-dCK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Etl-hV-dCK" firstAttribute="bottom" secondItem="vYD-7F-7G4" secondAttribute="bottom" constant="100" id="i0x-iu-Uh7"/>
+                            <constraint firstItem="vYD-7F-7G4" firstAttribute="centerX" secondItem="NOd-oh-yDj" secondAttribute="centerX" id="pE2-bq-ZDL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yji-u4-1Ii"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9i-cE-YQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="-293"/>
+        </scene>
+        <!--SettingsPVC View Controller-->
+        <scene sceneID="jDp-ue-MWM">
+            <objects>
+                <viewController id="7Bo-1L-ojt" customClass="SettingsPVCViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rc2-QJ-L2L">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4F-X4-Wmu">
+                                <rect key="frame" x="168.66666666666666" y="683" width="55.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                <connections>
+                                    <segue destination="PMa-QF-NLj" kind="show" identifier="segueToPlay" id="E96-vp-gfw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ntA-Q6-cHJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ntA-Q6-cHJ" firstAttribute="bottom" secondItem="F4F-X4-Wmu" secondAttribute="bottom" constant="100" id="LsQ-tp-ATW"/>
+                            <constraint firstItem="F4F-X4-Wmu" firstAttribute="centerX" secondItem="rc2-QJ-L2L" secondAttribute="centerX" id="j8M-n2-UMc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xaU-0A-6Zn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwT-tz-h0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="396"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E96-vp-gfw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="square" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
