@@ -9,19 +9,45 @@ import Foundation
 
 class Game {
     var boardArray: Array<Int> = [0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
+    var whosTurn = 1
     
-    func checkOption(square: Int) {
-        if boardArray[square] == 0 {
-            boardArray[square] = 1
-            checkWinner()
-        } else {
+    // Randomizes which player will start the in the TicTacToe
+    func whoStarts() {
+        let randomNumber = Int.random(in: 1...2)
+        whosTurn = randomNumber
+    }
+    
+    /* Checks if the square is taken by checking the tag and the value of the square, if the value is 0 the new value becomes the
+    ** value of the player and its the next players turn.
+     */
+    func checkOption(square: Int) -> Int {
+        var imageValue = 0
+        
+        switch boardArray[square] {
+        case 0:
+            if whosTurn == 1 {
+                boardArray[square] = 1
+                whosTurn = 2
+                imageValue = 1
+                checkWinner()
+            } else if whosTurn == 2 {
+                boardArray[square] = 2
+                whosTurn = 1
+                imageValue = 2
+                checkWinner()
+            }
+        default:
             print("already used")
             print(boardArray)
+            imageValue = 666
+            break
         }
+        print(boardArray[square])
+        return imageValue
     }
     
     /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
-    ** have reached any of the combinations to win */
+    ** have reached any of the combinations to win. */
     func checkWinner() {
         let winningCondition: Array<[Int]> = [
             [boardArray[3], boardArray[4], boardArray[5]],
@@ -46,10 +72,11 @@ class Game {
                 reset()
                 break
             }
-            print("test loop")
+           // print("test loop")
         }
     }
     
+    // Resets the TicTacToe board to a value of 0s.
     func reset() {
         boardArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         print("resetted")

@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
     @IBOutlet var playBoard: [UIImageView]!
     
     var game = Game()
+    var whosTurn: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,20 @@ class GameViewController: UIViewController {
 
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
-            game.checkOption(square: pressed.tag)
+            
+            let value = game.checkOption(square: pressed.tag)
+            print(value)
+            
+            switch value {
+            case 1:
+                pressed.image = UIImage(named: "ellipse")
+            case 2:
+                pressed.image = UIImage(named: "cancel")
+            default:
+                break
+            }
+            
+            
         }
     }
 }
