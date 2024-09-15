@@ -23,6 +23,9 @@ class GameViewController: UIViewController {
     var playerTwoName: String? = nil
     var whosPlaying = 0
     var winner = 0
+    let PLAYER_ONE = 1
+    let PLAYER_TWO = 2
+    let DRAW = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,11 @@ class GameViewController: UIViewController {
         
         if !isComputer {
             whosPlaying = game.whoStarts()
-            if whosPlaying == 1 {
+            if whosPlaying == PLAYER_ONE {
                 lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
             }
             
-            if whosPlaying == 2 {
+            if whosPlaying == PLAYER_TWO {
                 lblWhosTurn.text = "\(playerTwoName ?? "Player Two")s turn"
             }
         } else {
@@ -81,15 +84,15 @@ class GameViewController: UIViewController {
             }
             print(value)
        
-            if winner == 1 || winner == 2 || winner == 3 {
+            if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
                 for board in playBoard {
                     board.image = UIImage(named: "square")
                 }
                 
-                if winner == 1 {
+                if winner == PLAYER_ONE {
                     playerOneScore += 1
                     lblPlayerOne.text = "Wins: \(playerOneScore)"
-                } else if winner == 2 {
+                } else if winner == PLAYER_TWO {
                     playerTwoScore += 1
                     lblPlayerTwo.text = "Wins: \(playerTwoScore)"
                 }
@@ -98,11 +101,11 @@ class GameViewController: UIViewController {
                 
                 if !isComputer {
                     whosPlaying = game.whoStarts()
-                    if whosPlaying == 1 {
+                    if whosPlaying == PLAYER_ONE {
                         lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
                     }
                     
-                    if whosPlaying == 2 {
+                    if whosPlaying == PLAYER_TWO {
                         lblWhosTurn.text = "\(playerTwoName ?? "Player Two")s turn"
                     }
                 }

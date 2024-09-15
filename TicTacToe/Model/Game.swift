@@ -13,6 +13,9 @@ class Game {
     var isComputer = false
     var computerSquare = 0
     var isPlayerDone = false
+    let PLAYER_ONE = 1
+    let PLAYER_TWO = 2
+    let DRAW = 3
     
     // Enables computer mode.
     func enableComputer(computerPlays: Bool) {
@@ -37,7 +40,7 @@ class Game {
                 computerSquare = randomNumber
             } while boardArray[computerSquare] != 0
             
-            boardArray[computerSquare] = 2
+            boardArray[computerSquare] = PLAYER_TWO
             isPlayerDone = false
         }
         
@@ -50,23 +53,23 @@ class Game {
      */
     func checkOption(square: Int) -> Int {
         if isComputer {
-            whosPlaying = 1
+            whosPlaying = PLAYER_ONE
         }
         var imageValue = 0
         
         switch boardArray[square] {
         case 0:
-            if whosPlaying == 1 {
-                boardArray[square] = 1
+            if whosPlaying == PLAYER_ONE {
+                boardArray[square] = PLAYER_ONE
                 if !isComputer {
-                    whosPlaying = 2
+                    whosPlaying = PLAYER_TWO
                 } else {
                     isPlayerDone = true
                 }
                 imageValue = 1
-            } else if whosPlaying == 2 {
-                boardArray[square] = 2
-                whosPlaying = 1
+            } else if whosPlaying == PLAYER_TWO {
+                boardArray[square] = PLAYER_TWO
+                whosPlaying = PLAYER_ONE
                 imageValue = 2
             }
         default:
@@ -93,16 +96,16 @@ class Game {
         
         for condition in winningCondition {
             if condition == [1, 1, 1] {
-                isWinnerYet = 1
+                isWinnerYet = PLAYER_ONE
                 break
             } else if condition == [2, 2, 2] {
-                isWinnerYet = 2
+                isWinnerYet = PLAYER_TWO
                 break
             }
         }
         
         if !boardArray.contains(0) && isWinnerYet == 0 {
-            isWinnerYet = 3
+            isWinnerYet = DRAW
         }
         
         return isWinnerYet
