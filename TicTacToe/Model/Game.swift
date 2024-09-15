@@ -79,8 +79,8 @@ class Game {
     
     /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
     ** have reached any of the combinations to win. */
-    func checkWinner() -> Bool {
-        var isWinnerYet = false
+    func checkWinner() -> Int {
+        var isWinnerYet = 0
         let winningCondition: Array<[Int]> = [
             [boardArray[3], boardArray[4], boardArray[5]],
             [boardArray[0], boardArray[1], boardArray[2]],
@@ -94,21 +94,21 @@ class Game {
         
         for condition in winningCondition {
             if condition == [1, 1, 1] {
-                isWinnerYet = true
+                isWinnerYet = 1
                 print("Player One Won")
                 reset()
                 break
             } else if condition == [2, 2, 2] {
-                isWinnerYet = true
+                isWinnerYet = 2
                 print("Player Two Won")
                 reset()
                 break
-            } else if !boardArray.contains(0) {
-                isWinnerYet = true
-                print("DRAW")
-                reset()
-                
             }
+        }
+        
+        if !boardArray.contains(0) {
+            isWinnerYet = 3
+            reset()
         }
         
         return isWinnerYet

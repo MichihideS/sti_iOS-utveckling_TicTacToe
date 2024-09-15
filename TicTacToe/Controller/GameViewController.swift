@@ -9,9 +9,13 @@ import UIKit
 
 class GameViewController: UIViewController {
     @IBOutlet var playBoard: [UIImageView]!
+    @IBOutlet weak var lblPlayerOne: UILabel!
+    @IBOutlet weak var lblPlayerTwo: UILabel!
     
     var game = Game()
     var computerPlays = true // Computer test
+    var playerOneScore = 0
+    var playerTwoScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +38,27 @@ class GameViewController: UIViewController {
                 break
             }
             
-            let winner = game.checkWinner()
+            var winner = game.checkWinner()
             
-            if computerPlays && !winner {
+            if computerPlays && winner == 0 {
                 let computerValue = game.computerChoice()
                 
                 playBoard[computerValue].image = UIImage(named: "player_two")
+                winner = game.checkWinner()
             }
             print(value)
        
-            if winner == true {
+            if winner == 1 || winner == 2 || winner == 3 {
                 for board in playBoard {
                     board.image = UIImage(named: "square")
+                }
+                
+                if winner == 1 {
+                    playerOneScore += 1
+                    lblPlayerOne.text = String(playerOneScore)
+                } else if winner == 2 {
+                    playerTwoScore += 1
+                    lblPlayerTwo.text = String(playerTwoScore)
                 }
             }
         }

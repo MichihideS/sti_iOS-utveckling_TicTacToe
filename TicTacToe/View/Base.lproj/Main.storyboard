@@ -97,6 +97,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-De-0V1">
+                                <rect key="frame" x="50" y="153" width="10.333333333333336" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWF-KU-wMk">
                                 <rect key="frame" x="36.666666666666657" y="266" width="320" height="320"/>
                                 <subviews>
@@ -213,16 +219,28 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-xu-48D">
+                                <rect key="frame" x="332.66666666666669" y="153" width="10.333333333333314" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xoe-nv-yfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerY" secondItem="hqj-4E-2Iu" secondAttribute="centerY" id="FwQ-R5-q30"/>
+                            <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="Kdc-xg-mrt"/>
+                            <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="QOP-26-tFT"/>
+                            <constraint firstItem="Lvf-De-0V1" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="50" id="dom-AJ-0gd"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="hjP-hT-EaO"/>
+                            <constraint firstItem="Xoe-nv-yfa" firstAttribute="trailing" secondItem="5Vm-xu-48D" secondAttribute="trailing" constant="50" id="kat-ES-zLs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DKK-gn-uwv"/>
                     <connections>
+                        <outlet property="lblPlayerOne" destination="Lvf-De-0V1" id="G1k-mw-DDH"/>
+                        <outlet property="lblPlayerTwo" destination="5Vm-xu-48D" id="goA-pE-oqA"/>
                         <outletCollection property="playBoard" destination="tpj-VG-EjP" collectionClass="NSMutableArray" id="j6s-YH-okK"/>
                         <outletCollection property="playBoard" destination="N5N-gb-uH1" collectionClass="NSMutableArray" id="0mZ-VO-jIP"/>
                         <outletCollection property="playBoard" destination="PLp-94-Wf9" collectionClass="NSMutableArray" id="YGq-wW-3Ea"/>
@@ -281,7 +299,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3280" y="-2"/>
+            <point key="canvasLocation" x="3278.6259541984732" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AzR-TH-aAl">
