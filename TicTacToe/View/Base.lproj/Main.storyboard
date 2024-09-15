@@ -237,6 +237,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whos Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5W-qh-Gnc">
+                                <rect key="frame" x="125" y="179" width="143" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xoe-nv-yfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -245,7 +251,9 @@
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="53V-V1-KmQ" secondAttribute="bottom" constant="15" id="6aM-4Z-o4J"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerY" secondItem="hqj-4E-2Iu" secondAttribute="centerY" id="FwQ-R5-q30"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="Kdc-xg-mrt"/>
+                            <constraint firstItem="bWF-KU-wMk" firstAttribute="top" secondItem="N5W-qh-Gnc" secondAttribute="bottom" constant="50" id="M8k-Po-B4i"/>
                             <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="QOP-26-tFT"/>
+                            <constraint firstItem="N5W-qh-Gnc" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="YXw-x1-YaY"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="50" id="dom-AJ-0gd"/>
                             <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="vdH-L2-WOu" secondAttribute="bottom" constant="15" id="gVD-UG-wRM"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="hjP-hT-EaO"/>
@@ -259,6 +267,7 @@
                         <outlet property="lblPlayerOneName" destination="53V-V1-KmQ" id="BPI-4S-NEA"/>
                         <outlet property="lblPlayerTwo" destination="5Vm-xu-48D" id="goA-pE-oqA"/>
                         <outlet property="lblPlayerTwoName" destination="vdH-L2-WOu" id="qqc-Dj-ix2"/>
+                        <outlet property="lblWhosTurn" destination="N5W-qh-Gnc" id="ors-H0-Z2l"/>
                         <outletCollection property="playBoard" destination="tpj-VG-EjP" collectionClass="NSMutableArray" id="j6s-YH-okK"/>
                         <outletCollection property="playBoard" destination="N5N-gb-uH1" collectionClass="NSMutableArray" id="0mZ-VO-jIP"/>
                         <outletCollection property="playBoard" destination="PLp-94-Wf9" collectionClass="NSMutableArray" id="YGq-wW-3Ea"/>
@@ -268,6 +277,7 @@
                         <outletCollection property="playBoard" destination="LLy-Mz-tT5" collectionClass="NSMutableArray" id="AQV-ft-GfF"/>
                         <outletCollection property="playBoard" destination="svC-Hq-Yqf" collectionClass="NSMutableArray" id="6CU-FD-ceY"/>
                         <outletCollection property="playBoard" destination="xTw-yY-Gbp" collectionClass="NSMutableArray" id="VOT-f8-vDm"/>
+                        <segue destination="2aD-jT-dTp" kind="show" identifier="segueToEndScreen" id="wOj-eG-Cgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDN-GX-6jm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -318,6 +328,58 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3278.6259541984732" y="-2.1126760563380285"/>
+        </scene>
+        <!--End Screen View Controller-->
+        <scene sceneID="KzM-8a-QqB">
+            <objects>
+                <viewController id="2aD-jT-dTp" customClass="EndScreenViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n5v-GD-SPw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3N-sm-8uV">
+                                <rect key="frame" x="50" y="203" width="293" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qf-YN-yH9">
+                                <rect key="frame" x="145.33333333333334" y="408.66666666666669" width="102.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play Again"/>
+                                <connections>
+                                    <action selector="btnPlayAgain:" destination="2aD-jT-dTp" eventType="touchUpInside" id="X07-ck-5bW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAN-BT-M01">
+                                <rect key="frame" x="142.66666666666666" y="493.66666666666669" width="107.66666666666666" height="35.000000000000057"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Main Menu"/>
+                                <connections>
+                                    <action selector="btnMainMenu:" destination="2aD-jT-dTp" eventType="touchUpInside" id="pgV-vu-zE8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gT8-sP-uf7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gT8-sP-uf7" firstAttribute="trailing" secondItem="R3N-sm-8uV" secondAttribute="trailing" constant="50" id="Azq-BX-9oQ"/>
+                            <constraint firstItem="R3N-sm-8uV" firstAttribute="top" secondItem="gT8-sP-uf7" secondAttribute="top" constant="100" id="YFy-o6-hHR"/>
+                            <constraint firstItem="SAN-BT-M01" firstAttribute="top" secondItem="7Qf-YN-yH9" secondAttribute="bottom" constant="50" id="fCz-X9-zV4"/>
+                            <constraint firstItem="7Qf-YN-yH9" firstAttribute="centerY" secondItem="n5v-GD-SPw" secondAttribute="centerY" id="g5K-JS-TyT"/>
+                            <constraint firstItem="7Qf-YN-yH9" firstAttribute="centerX" secondItem="n5v-GD-SPw" secondAttribute="centerX" id="kbh-UF-Hfj"/>
+                            <constraint firstItem="SAN-BT-M01" firstAttribute="centerX" secondItem="n5v-GD-SPw" secondAttribute="centerX" id="vSJ-Sm-3FZ"/>
+                            <constraint firstItem="R3N-sm-8uV" firstAttribute="leading" secondItem="gT8-sP-uf7" secondAttribute="leading" constant="50" id="vqd-DS-ruK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t9d-17-EDP"/>
+                    <connections>
+                        <outlet property="lblwhoWon" destination="R3N-sm-8uV" id="qZ0-fi-cev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hka-ud-ipL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4169" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AzR-TH-aAl">

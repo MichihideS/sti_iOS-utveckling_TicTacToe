@@ -23,7 +23,7 @@ class SettingsPVPViewController: UIViewController {
             let playerTwo = txtPlayerTwoName.text
             destinationVC.playerOneName = playerOne
             destinationVC.playerTwoName = playerTwo
-            destinationVC.computerPlays = false
+            destinationVC.isComputer = false
         }
     }
 

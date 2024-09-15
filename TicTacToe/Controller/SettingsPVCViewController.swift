@@ -25,7 +25,7 @@ class SettingsPVCViewController: UIViewController {
             let playerTwo = "Computer"
             destinationVC.playerOneName = playerOne
             destinationVC.playerTwoName = playerTwo
-            destinationVC.computerPlays = true
+            destinationVC.isComputer = true
         }
     }
 }
