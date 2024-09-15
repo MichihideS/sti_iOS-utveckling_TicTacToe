@@ -84,7 +84,6 @@ class GameViewController: UIViewController {
             winner = game.checkWinner()
             
             if isComputer && winner == 0 {
-                
                 let computerValue = game.computerChoice()
                 
                 playBoard[computerValue].image = UIImage(named: "player_two")
