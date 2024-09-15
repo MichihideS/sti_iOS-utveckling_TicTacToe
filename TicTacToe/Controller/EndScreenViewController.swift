@@ -16,6 +16,8 @@ class EndScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Will show the winner of the game unless the game is a draw.
         if whoWon == "DRAW" {
             lblwhoWon.text = "DRAW, try again!"
         } else {
@@ -23,12 +25,14 @@ class EndScreenViewController: UIViewController {
         }
     }
     
+    // Play Again button that will that you back to the Game.
     @IBAction func btnPlayAgain(_ sender: UIButton) {
         if let navigationController = self.navigationController {
             navigationController.popViewController(animated: true)
         }
     }
     
+    // Main Menu button that will take you back to the root of the stack navigator, home screen.
     @IBAction func btnMainMenu(_ sender: UIButton) {
         if let navigationController = self.navigationController {
             navigationController.popToRootViewController(animated: true)

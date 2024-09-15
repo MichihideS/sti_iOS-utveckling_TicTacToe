@@ -36,6 +36,9 @@ class GameViewController: UIViewController {
         lblPlayerOne.text = "Wins: \(playerOneScore)"
         lblPlayerTwo.text = "Wins: \(playerTwoScore)"
         
+        /* Checks which players are playing the game and calls the whoStarts function to see which player
+         * gets to play first.
+         */
         if !isComputer {
             whosPlaying = game.whoStarts()
             if whosPlaying == PLAYER_ONE {
@@ -50,12 +53,16 @@ class GameViewController: UIViewController {
         }
     }
 
+    // Action which all squares in the board points to.
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
             if isComputer {
                 game.enableComputer(computerPlays: isComputer)
             }
             
+            /* Checks if the square pressed is a free square and depending on the value it will
+             * mark the square with ethier a X or a O depending on which player it was.
+             */
             let value = game.checkOption(square: pressed.tag)
             
             switch value {
@@ -73,6 +80,7 @@ class GameViewController: UIViewController {
                 break
             }
             
+            // Checks for a winner before using the computer randomized move before and after
             winner = game.checkWinner()
             
             if isComputer && winner == 0 {
@@ -82,8 +90,10 @@ class GameViewController: UIViewController {
                 playBoard[computerValue].image = UIImage(named: "player_two")
                 winner = game.checkWinner()
             }
-            print(value)
        
+            /* Checks if a winner has been found and if it has, it will loop through all the squares and reset the values.
+             * Also updates the score depending on who wins.
+             */
             if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
                 for board in playBoard {
                     board.image = UIImage(named: "square")
@@ -97,8 +107,10 @@ class GameViewController: UIViewController {
                     lblPlayerTwo.text = "Wins: \(playerTwoScore)"
                 }
                 
+                // Resets the values of the array to 0
                 game.reset()
                 
+                // If you are playing vs another player it will randomize again who will begind the round.
                 if !isComputer {
                     whosPlaying = game.whoStarts()
                     if whosPlaying == PLAYER_ONE {
@@ -110,11 +122,13 @@ class GameViewController: UIViewController {
                     }
                 }
                 
+                // Navigation to the end screen if a winner is found.
                 performSegue(withIdentifier: "segueToEndScreen", sender: self)
             }
         }
     }
     
+    // A prepare that will transfer the winner to the end screen.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? EndScreenViewController {
             switch winner {

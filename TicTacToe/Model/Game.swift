@@ -22,7 +22,7 @@ class Game {
         isComputer = computerPlays
     }
     
-    // Randomizes which player will start the in the TicTacToe (Not vs the computer).
+    // Randomizes which player will start the in the TicTacToe (Not vs the computer) and returns the value.
     func whoStarts() -> Int {
         let randomNumber = Int.random(in: 1...2)
         whosPlaying = randomNumber
@@ -31,7 +31,7 @@ class Game {
     }
     
     /* Checks Boolean if player actually made a valid choice and if player did computer will randomize a number and
-    ** check the array if the number is valid aswell.
+     * check the array if the number is valid aswell.
      */
     func computerChoice() -> Int {
         if isPlayerDone {
@@ -49,7 +49,7 @@ class Game {
     
     /* Checks if the square is taken by checking the tag and the value of the square, if the value is 0 the new value becomes the
      * value of the player and its the next players turn. If you are playing vs the computer player one will always be the player
-     * since the computer will act as soon as the player act.
+     * since the computer will act as soon as the player act. Function returns a value that shows which player just acted.
      */
     func checkOption(square: Int) -> Int {
         if isComputer {
@@ -80,7 +80,9 @@ class Game {
     }
     
     /* Checks for all possible winning conditions for the tic tac toe and loops through the conditions to see if any player
-    ** have reached any of the combinations to win. */
+     * have reached any of the combinations to win. Also checks if all squares are taken and if no winner has yet to be declared
+     * it will return a draw.
+     */
     func checkWinner() -> Int {
         var isWinnerYet = 0
         let winningCondition: Array<[Int]> = [

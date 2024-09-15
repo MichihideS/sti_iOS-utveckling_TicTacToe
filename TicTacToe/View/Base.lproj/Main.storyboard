@@ -27,8 +27,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Play"/>
                                         <connections>
-                                            <action selector="toPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIO-gt-9cr"/>
-                                            <segue destination="zky-Kw-LA7" kind="show" identifier="segueToChooseMode" id="RCj-wb-JM7"/>
+                                            <segue destination="zky-Kw-LA7" kind="show" id="gsT-ij-O3j"/>
                                         </connections>
                                     </button>
                                 </subviews>

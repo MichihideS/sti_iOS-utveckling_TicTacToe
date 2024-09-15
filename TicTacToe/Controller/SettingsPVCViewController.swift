@@ -17,7 +17,7 @@ class SettingsPVCViewController: UIViewController {
     }
     
     /* Contains the information for the name the player chooses, computer name and a boolean
-    ** so that the game knows the you want to play vs the computer.
+     * so that the game knows the you want to play vs the computer.
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? GameViewController {

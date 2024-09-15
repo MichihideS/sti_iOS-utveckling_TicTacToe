@@ -17,6 +17,9 @@ class SettingsPVPViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /* Contains the information for the name of the players and a boolean for the computer
+     * so that the game knows the you don't want to play vs the computer.
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? GameViewController {
             let playerOne = txtPlayerOneName.text
