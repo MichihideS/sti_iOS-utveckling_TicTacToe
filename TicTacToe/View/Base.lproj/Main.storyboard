@@ -113,28 +113,60 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-De-0V1">
-                                <rect key="frame" x="50" y="153" width="10.333333333333336" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-De-0V1">
+                                <rect key="frame" x="30" y="153" width="12" height="24.666666666666657"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60408694730000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26274511220000002" green="0.33333334329999997" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="21" name="SFMono-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-xu-48D">
-                                <rect key="frame" x="332.66666666666669" y="153" width="10.333333333333314" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-xu-48D">
+                                <rect key="frame" x="351" y="153" width="12" height="24.666666666666657"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60408694730000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26274511220000002" green="0.33333334329999997" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="21" name="SFMono-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-V1-KmQ">
-                                <rect key="frame" x="19.999999999999993" y="112.66666666666667" width="99.333333333333314" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-V1-KmQ">
+                                <rect key="frame" x="19.999999999999993" y="113.33333333333333" width="103.33333333333331" height="24.666666666666671"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60408694730000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Player One">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26274511220000002" green="0.33333334329999997" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="21" name="SFMono-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-L2-WOu">
-                                <rect key="frame" x="274.33333333333331" y="112.66666666666667" width="98.666666666666686" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-L2-WOu">
+                                <rect key="frame" x="271" y="113.33333333333333" width="102" height="24.666666666666671"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60408694730000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Player Two">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26274511220000002" green="0.33333334329999997" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="21" name="SFMono-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWF-KU-wMk">
@@ -254,7 +286,8 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5W-qh-Gnc">
-                                <rect key="frame" x="110.00000000000001" y="646" width="173.33333333333337" height="43"/>
+                                <rect key="frame" x="30" y="646" width="333" height="43"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60408694727891143" colorSpace="custom" customColorSpace="displayP3"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Whos Turn">
                                         <attributes>
@@ -274,14 +307,16 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vdH-L2-WOu" secondAttribute="trailing" constant="20" id="3wq-0R-jDX"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="53V-V1-KmQ" secondAttribute="bottom" constant="15" id="6aM-4Z-o4J"/>
+                            <constraint firstItem="Xoe-nv-yfa" firstAttribute="trailing" secondItem="N5W-qh-Gnc" secondAttribute="trailing" constant="30" id="7yE-XW-RWS"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerY" secondItem="hqj-4E-2Iu" secondAttribute="centerY" id="FwQ-R5-q30"/>
+                            <constraint firstItem="N5W-qh-Gnc" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="30" id="IaR-AC-vLY"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="Kdc-xg-mrt"/>
                             <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="QOP-26-tFT"/>
                             <constraint firstItem="N5W-qh-Gnc" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="YXw-x1-YaY"/>
-                            <constraint firstItem="Lvf-De-0V1" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="50" id="dom-AJ-0gd"/>
+                            <constraint firstItem="Lvf-De-0V1" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="30" id="dom-AJ-0gd"/>
                             <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="vdH-L2-WOu" secondAttribute="bottom" constant="15" id="gVD-UG-wRM"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="hjP-hT-EaO"/>
-                            <constraint firstItem="Xoe-nv-yfa" firstAttribute="trailing" secondItem="5Vm-xu-48D" secondAttribute="trailing" constant="50" id="kat-ES-zLs"/>
+                            <constraint firstItem="Xoe-nv-yfa" firstAttribute="trailing" secondItem="5Vm-xu-48D" secondAttribute="trailing" constant="30" id="kat-ES-zLs"/>
                             <constraint firstItem="N5W-qh-Gnc" firstAttribute="top" secondItem="bWF-KU-wMk" secondAttribute="bottom" constant="60" id="m4m-RW-XCB"/>
                             <constraint firstItem="53V-V1-KmQ" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="20" id="oG5-Ty-q66"/>
                         </constraints>
