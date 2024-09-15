@@ -8,22 +8,24 @@
 import UIKit
 
 class SettingsPVCViewController: UIViewController {
-
+    @IBOutlet weak var txtPlayerOneName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /* Contains the information for the name the player chooses, computer name and a boolean
+    ** so that the game knows the you want to play vs the computer.
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destinationVC = segue.destination as? GameViewController {
+            let playerOne = txtPlayerOneName.text
+            let playerTwo = "Computer"
+            destinationVC.playerOneName = playerOne
+            destinationVC.playerTwoName = playerTwo
+            destinationVC.computerPlays = true
+        }
     }
-    */
-
 }

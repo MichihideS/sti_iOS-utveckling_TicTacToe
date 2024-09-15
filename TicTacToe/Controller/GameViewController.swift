@@ -11,21 +11,31 @@ class GameViewController: UIViewController {
     @IBOutlet var playBoard: [UIImageView]!
     @IBOutlet weak var lblPlayerOne: UILabel!
     @IBOutlet weak var lblPlayerTwo: UILabel!
+    @IBOutlet weak var lblPlayerOneName: UILabel!
+    @IBOutlet weak var lblPlayerTwoName: UILabel!
     
     var game = Game()
-    var computerPlays = true // Computer test
+    var computerPlays = false
     var playerOneScore = 0
     var playerTwoScore = 0
+    var playerOneName: String? = nil
+    var playerTwoName: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        lblPlayerOneName.text = playerOneName ?? "Player One"
+        lblPlayerTwoName.text = playerTwoName ?? "Player Two"
+        lblPlayerOne.text = "Wins: \(playerOneScore)"
+        lblPlayerTwo.text = "Wins: \(playerTwoScore)"
     }
 
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
-            game.enableComputer(computerPlays: computerPlays)
+            if computerPlays {
+                game.enableComputer(computerPlays: computerPlays)
+            }
             
             let value = game.checkOption(square: pressed.tag)
             
@@ -55,10 +65,10 @@ class GameViewController: UIViewController {
                 
                 if winner == 1 {
                     playerOneScore += 1
-                    lblPlayerOne.text = String(playerOneScore)
+                    lblPlayerOne.text = "Wins: \(playerOneScore)"
                 } else if winner == 2 {
                     playerTwoScore += 1
-                    lblPlayerTwo.text = String(playerTwoScore)
+                    lblPlayerTwo.text = "Wins: \(playerTwoScore)"
                 }
             }
         }

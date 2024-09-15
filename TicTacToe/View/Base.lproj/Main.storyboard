@@ -103,6 +103,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-xu-48D">
+                                <rect key="frame" x="332.66666666666669" y="153" width="10.333333333333314" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53V-V1-KmQ">
+                                <rect key="frame" x="19.999999999999993" y="112.66666666666667" width="99.333333333333314" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-L2-WOu">
+                                <rect key="frame" x="274.33333333333331" y="112.66666666666667" width="98.666666666666686" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWF-KU-wMk">
                                 <rect key="frame" x="36.666666666666657" y="266" width="320" height="320"/>
                                 <subviews>
@@ -219,28 +237,28 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-xu-48D">
-                                <rect key="frame" x="332.66666666666669" y="153" width="10.333333333333314" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xoe-nv-yfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vdH-L2-WOu" secondAttribute="trailing" constant="20" id="3wq-0R-jDX"/>
+                            <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="53V-V1-KmQ" secondAttribute="bottom" constant="15" id="6aM-4Z-o4J"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerY" secondItem="hqj-4E-2Iu" secondAttribute="centerY" id="FwQ-R5-q30"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="Kdc-xg-mrt"/>
                             <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="Xoe-nv-yfa" secondAttribute="top" constant="50" id="QOP-26-tFT"/>
                             <constraint firstItem="Lvf-De-0V1" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="50" id="dom-AJ-0gd"/>
+                            <constraint firstItem="5Vm-xu-48D" firstAttribute="top" secondItem="vdH-L2-WOu" secondAttribute="bottom" constant="15" id="gVD-UG-wRM"/>
                             <constraint firstItem="bWF-KU-wMk" firstAttribute="centerX" secondItem="hqj-4E-2Iu" secondAttribute="centerX" id="hjP-hT-EaO"/>
                             <constraint firstItem="Xoe-nv-yfa" firstAttribute="trailing" secondItem="5Vm-xu-48D" secondAttribute="trailing" constant="50" id="kat-ES-zLs"/>
+                            <constraint firstItem="53V-V1-KmQ" firstAttribute="leading" secondItem="Xoe-nv-yfa" secondAttribute="leading" constant="20" id="oG5-Ty-q66"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DKK-gn-uwv"/>
                     <connections>
                         <outlet property="lblPlayerOne" destination="Lvf-De-0V1" id="G1k-mw-DDH"/>
+                        <outlet property="lblPlayerOneName" destination="53V-V1-KmQ" id="BPI-4S-NEA"/>
                         <outlet property="lblPlayerTwo" destination="5Vm-xu-48D" id="goA-pE-oqA"/>
+                        <outlet property="lblPlayerTwoName" destination="vdH-L2-WOu" id="qqc-Dj-ix2"/>
                         <outletCollection property="playBoard" destination="tpj-VG-EjP" collectionClass="NSMutableArray" id="j6s-YH-okK"/>
                         <outletCollection property="playBoard" destination="N5N-gb-uH1" collectionClass="NSMutableArray" id="0mZ-VO-jIP"/>
                         <outletCollection property="playBoard" destination="PLp-94-Wf9" collectionClass="NSMutableArray" id="YGq-wW-3Ea"/>
@@ -335,15 +353,41 @@
                                     <segue destination="PMa-QF-NLj" kind="show" identifier="segueToPlay" id="sKs-3F-Fr0"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nEp-pm-hqm">
+                                <rect key="frame" x="96.666666666666686" y="401" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NQK-2V-GPw"/>
+                                    <constraint firstAttribute="height" constant="50" id="sXj-eD-rLY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-BI-qhF">
+                                <rect key="frame" x="96.666666666666686" y="501" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="D1x-CN-DYj"/>
+                                    <constraint firstAttribute="width" constant="200" id="sd1-fp-XY3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Etl-hV-dCK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LHo-BI-qhF" firstAttribute="top" secondItem="nEp-pm-hqm" secondAttribute="bottom" constant="50" id="3dP-9X-wjg"/>
                             <constraint firstItem="Etl-hV-dCK" firstAttribute="bottom" secondItem="vYD-7F-7G4" secondAttribute="bottom" constant="100" id="i0x-iu-Uh7"/>
+                            <constraint firstItem="LHo-BI-qhF" firstAttribute="centerX" secondItem="NOd-oh-yDj" secondAttribute="centerX" id="kkT-mf-X8u"/>
                             <constraint firstItem="vYD-7F-7G4" firstAttribute="centerX" secondItem="NOd-oh-yDj" secondAttribute="centerX" id="pE2-bq-ZDL"/>
+                            <constraint firstItem="nEp-pm-hqm" firstAttribute="centerY" secondItem="NOd-oh-yDj" secondAttribute="centerY" id="req-7w-pzJ"/>
+                            <constraint firstItem="nEp-pm-hqm" firstAttribute="centerX" secondItem="NOd-oh-yDj" secondAttribute="centerX" id="xRE-tc-gwf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yji-u4-1Ii"/>
+                    <connections>
+                        <outlet property="txtPlayerOneName" destination="nEp-pm-hqm" id="eKS-LT-LTt"/>
+                        <outlet property="txtPlayerTwoName" destination="LHo-BI-qhF" id="HQy-D5-b8x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9i-cE-YQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -365,15 +409,29 @@
                                     <segue destination="PMa-QF-NLj" kind="show" identifier="segueToPlay" id="E96-vp-gfw"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-V0-ZEX">
+                                <rect key="frame" x="96.666666666666686" y="401" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bhk-wX-RuF"/>
+                                    <constraint firstAttribute="width" constant="200" id="gGB-Y4-v2r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ntA-Q6-cHJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cMh-V0-ZEX" firstAttribute="centerX" secondItem="rc2-QJ-L2L" secondAttribute="centerX" id="9RN-Q4-2zf"/>
                             <constraint firstItem="ntA-Q6-cHJ" firstAttribute="bottom" secondItem="F4F-X4-Wmu" secondAttribute="bottom" constant="100" id="LsQ-tp-ATW"/>
+                            <constraint firstItem="cMh-V0-ZEX" firstAttribute="centerY" secondItem="rc2-QJ-L2L" secondAttribute="centerY" id="aTm-MQ-Lce"/>
                             <constraint firstItem="F4F-X4-Wmu" firstAttribute="centerX" secondItem="rc2-QJ-L2L" secondAttribute="centerX" id="j8M-n2-UMc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xaU-0A-6Zn"/>
+                    <connections>
+                        <outlet property="txtPlayerOneName" destination="cMh-V0-ZEX" id="c1N-F8-zqM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QwT-tz-h0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,7 +439,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="E96-vp-gfw"/>
+        <segue reference="sKs-3F-Fr0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square" width="100" height="100"/>

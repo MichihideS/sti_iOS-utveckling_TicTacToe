@@ -9,7 +9,7 @@ import Foundation
 
 class Game {
     var boardArray: Array<Int> = [0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0]
-    var whosPlaying: Int?
+    var whosPlaying: Int? = nil
     var isComputer = false
     var computerSquare = 0
     var isPlayerDone = false
@@ -47,7 +47,7 @@ class Game {
     func checkOption(square: Int) -> Int {
         if whosPlaying == nil && !isComputer {
             whoStarts()
-        } else {
+        } else if whosPlaying == nil && isComputer {
             whosPlaying = 1
         }
         var imageValue = 0
@@ -58,6 +58,7 @@ class Game {
                 boardArray[square] = 1
                 if !isComputer {
                     whosPlaying = 2
+                    print("changed user to 2")
                 } else {
                     isPlayerDone = true
                 }
@@ -65,6 +66,7 @@ class Game {
             } else if whosPlaying == 2 {
                 boardArray[square] = 2
                 whosPlaying = 1
+                print("changed user to 1")
                 imageValue = 2
             }
         default:
