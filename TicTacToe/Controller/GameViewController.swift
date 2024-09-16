@@ -115,7 +115,7 @@ class GameViewController: UIViewController {
     /* Will loop through all the squares and reset the values.
      * Also updates the score depending on who wins.
     */
-    func checkForWinner() {
+    func updateScore() {
         for board in playBoard {
             board.image = UIImage(named: "square")
         }
@@ -135,7 +135,7 @@ class GameViewController: UIViewController {
      */
     func winnerFound() {
         if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
-            checkForWinner()
+            updateScore()
             
             // Resets the values of the array to 0
             game.reset()

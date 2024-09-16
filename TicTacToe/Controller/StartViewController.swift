@@ -19,6 +19,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // Looping timer to make the animations go infinite when the start screen loads
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
             UIView.animate(withDuration: 0.1) {
                 self.imgX.transform = self.imgX.transform.rotated(by: 0.5)
@@ -31,6 +32,7 @@ class StartViewController: UIViewController {
             }
         }
         
+        // Looping timer that loops back aswell to make the animation go back and forth
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
             UIView.animate(withDuration: 1, animations: {
                 self.imgOThree.center.x -= 400
