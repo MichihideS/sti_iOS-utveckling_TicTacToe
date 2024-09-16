@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var lblPlayerOneName: UILabel!
     @IBOutlet weak var lblPlayerTwoName: UILabel!
     @IBOutlet weak var lblWhosTurn: UILabel!
+    @IBOutlet weak var imgComputerPlaying: UIImageView!
     
     var game = Game()
     var isComputer = false
@@ -69,28 +70,24 @@ class GameViewController: UIViewController {
             
             // Checks for a winner before using the computer randomized move before and after
             winner = game.checkWinner()
+            winnerFound()
             
             if isComputer && winner == 0 {
-                let computerValue = game.computerChoice()
+                imgComputerPlaying.isHidden = false
                 
-                playBoard[computerValue].image = UIImage(named: "player_two")
-                winner = game.checkWinner()
-            }
-       
-            /* Checks if a winner has been found and if it has, it will loop through all the squares and reset the values.
-             * Also updates the score depending on who wins.
-             */
-            if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
-                checkForWinner()
+                boardDisabler()
                 
-                // Resets the values of the array to 0
-                game.reset()
-                
-                // If you are playing vs another player it will randomize again who will begind the round.
-                preGame()
-                
-                // Navigation to the end screen if a winner is found.
-                performSegue(withIdentifier: "segueToEndScreen", sender: self)
+                // GCD - computer makes the move 2 seconds after you make yours.
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    let computerValue = self.game.computerChoice()
+                    
+                    self.boardEnabler()
+                    self.imgComputerPlaying.isHidden = true
+                    
+                    self.playBoard[computerValue].image = UIImage(named: "player_two")
+                    self.winner = self.game.checkWinner()
+                    self.winnerFound()
+                }
             }
         }
     }
@@ -145,5 +142,37 @@ class GameViewController: UIViewController {
             lblPlayerTwo.text = "Wins: \(playerTwoScore)"
         }
         
+    }
+    
+    /* Checks if a winner has been found and if it has, it will loop through all the squares and reset the values.
+     * Also updates the score depending on who wins.
+     */
+    func winnerFound() {
+        if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
+            checkForWinner()
+            
+            // Resets the values of the array to 0
+            game.reset()
+            
+            // If you are playing vs another player it will randomize again who will begind the round.
+            preGame()
+            
+            // Navigation to the end screen if a winner is found.
+            performSegue(withIdentifier: "segueToEndScreen", sender: self)
+        }
+    }
+    
+    // Disables interaction with the playboard.
+    func boardDisabler() {
+        for board in playBoard {
+            board.isUserInteractionEnabled = false
+        }
+    }
+    
+    // Enables interaction with the playboard.
+    func boardEnabler() {
+        for board in playBoard {
+            board.isUserInteractionEnabled = true
+        }
     }
 }
