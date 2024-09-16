@@ -73,21 +73,7 @@ class GameViewController: UIViewController {
             winnerFound()
             
             if isComputer && winner == 0 {
-                imgComputerPlaying.isHidden = false
-                
-                boardDisabler()
-                
-                // GCD - computer makes the move 2 seconds after you make yours.
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    let computerValue = self.game.computerChoice()
-                    
-                    self.boardEnabler()
-                    self.imgComputerPlaying.isHidden = true
-                    
-                    self.playBoard[computerValue].image = UIImage(named: "player_two")
-                    self.winner = self.game.checkWinner()
-                    self.winnerFound()
-                }
+                computersTurn()
             }
         }
     }
@@ -173,6 +159,41 @@ class GameViewController: UIViewController {
     func boardEnabler() {
         for board in playBoard {
             board.isUserInteractionEnabled = true
+        }
+    }
+    
+    /* Shows the computer image with a animation and disables the playboard
+     * for 1.7 seconds so the player cant make a move while the computer "thinks".
+     */
+    func computersTurn() {
+        imgComputerPlaying.isHidden = false
+        
+        lblWhosTurn.text = "Computers turn"
+        
+        UIView.animate(withDuration: 0.3) {
+            self.imgComputerPlaying.layer.opacity = 1
+        }
+        
+        boardDisabler()
+        
+        // GCD - computer makes the move 1.7 seconds after you make yours.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) {
+            let computerValue = self.game.computerChoice()
+            
+            self.boardEnabler()
+            
+            UIView.animate(withDuration: 0.3) {
+                self.imgComputerPlaying.layer.opacity = 0.1
+            }
+            
+            self.lblWhosTurn.text = "\(self.playerOneName ?? "Player One")s turn"
+            self.playBoard[computerValue].image = UIImage(named: "player_two")
+            self.winner = self.game.checkWinner()
+            self.winnerFound()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.imgComputerPlaying.isHidden = true
+            }
         }
     }
 }
