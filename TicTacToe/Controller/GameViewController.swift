@@ -36,30 +36,17 @@ class GameViewController: UIViewController {
         lblPlayerOne.text = "Wins: \(playerOneScore)"
         lblPlayerTwo.text = "Wins: \(playerTwoScore)"
         
-        /* Checks which players are playing the game and calls the whoStarts function to see which player
-         * gets to play first.
-         */
-        if !isComputer {
-            whosPlaying = game.whoStarts()
-            if whosPlaying == PLAYER_ONE {
-                lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
-            }
-            
-            if whosPlaying == PLAYER_TWO {
-                lblWhosTurn.text = "\(playerTwoName ?? "Player Two")s turn"
-            }
-        } else {
-            lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
+        if isComputer {
+            game.enableComputer(computerPlays: isComputer)
         }
+        
+        preGame()
     }
 
     // Action which all squares in the board points to.
     @IBAction func onPressedSquare(_ sender: UITapGestureRecognizer) {
         if let pressed = sender.view as? UIImageView {
-            if isComputer {
-                game.enableComputer(computerPlays: isComputer)
-            }
-            
+       
             /* Checks if the square pressed is a free square and depending on the value it will
              * mark the square with ethier a X or a O depending on which player it was.
              */
@@ -94,32 +81,13 @@ class GameViewController: UIViewController {
              * Also updates the score depending on who wins.
              */
             if winner == PLAYER_ONE || winner == PLAYER_TWO || winner == DRAW {
-                for board in playBoard {
-                    board.image = UIImage(named: "square")
-                }
-                
-                if winner == PLAYER_ONE {
-                    playerOneScore += 1
-                    lblPlayerOne.text = "Wins: \(playerOneScore)"
-                } else if winner == PLAYER_TWO {
-                    playerTwoScore += 1
-                    lblPlayerTwo.text = "Wins: \(playerTwoScore)"
-                }
+                checkForWinner()
                 
                 // Resets the values of the array to 0
                 game.reset()
                 
                 // If you are playing vs another player it will randomize again who will begind the round.
-                if !isComputer {
-                    whosPlaying = game.whoStarts()
-                    if whosPlaying == PLAYER_ONE {
-                        lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
-                    }
-                    
-                    if whosPlaying == PLAYER_TWO {
-                        lblWhosTurn.text = "\(playerTwoName ?? "Player Two")s turn"
-                    }
-                }
+                preGame()
                 
                 // Navigation to the end screen if a winner is found.
                 performSegue(withIdentifier: "segueToEndScreen", sender: self)
@@ -141,5 +109,41 @@ class GameViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    /* Checks which players are playing the game and calls the whoStarts function to see which player
+     * gets to play first. If vs the computer you always go first.
+     */
+    func preGame() {
+        if !isComputer {
+            whosPlaying = game.whoStarts()
+            if whosPlaying == PLAYER_ONE {
+                lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
+            }
+            
+            if whosPlaying == PLAYER_TWO {
+                lblWhosTurn.text = "\(playerTwoName ?? "Player Two")s turn"
+            }
+        } else {
+            lblWhosTurn.text = "\(playerOneName ?? "Player One")s turn"
+        }
+    }
+    
+    /* Will loop through all the squares and reset the values.
+     * Also updates the score depending on who wins.
+    */
+    func checkForWinner() {
+        for board in playBoard {
+            board.image = UIImage(named: "square")
+        }
+        
+        if winner == PLAYER_ONE {
+            playerOneScore += 1
+            lblPlayerOne.text = "Wins: \(playerOneScore)"
+        } else if winner == PLAYER_TWO {
+            playerTwoScore += 1
+            lblPlayerTwo.text = "Wins: \(playerTwoScore)"
+        }
+        
     }
 }
